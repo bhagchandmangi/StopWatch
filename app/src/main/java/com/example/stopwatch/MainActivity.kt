@@ -1,14 +1,20 @@
 package com.example.stopwatch
 
 import android.os.Bundle
+import android.view.View
+import android.view.Window
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -18,19 +24,28 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                CountDownView()
+                TransparentStatusBar(windows = window)
+                MyApp()
         }
     }
 }
 
 
 
-@Preview(showBackground = true)
 @Composable
-fun LightPreview() {
+fun MyApp() {
+
+    Column(modifier = Modifier
+        .padding(16.dp)
+        .fillMaxWidth()
+    ) {
+
         CountDownView()
+
+    }
+
 }
-/*
+
 @Composable
 fun TransparentStatusBar(windows: Window) =
     MaterialTheme {
@@ -49,4 +64,4 @@ fun TransparentStatusBar(windows: Window) =
             windows.decorView.systemUiVisibility = windows.decorView.systemUiVisibility or
                     View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
         }
-    }*/
+    }
