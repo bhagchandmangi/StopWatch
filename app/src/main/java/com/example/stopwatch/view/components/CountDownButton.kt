@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.stopwatch.R
@@ -32,8 +33,7 @@ fun CountDownButton(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .fillMaxHeight()
-            .padding(top = 90.dp))
+            .padding(top = 50.dp))
     {
         Button(
             onClick = {
@@ -60,4 +60,10 @@ fun CountDownButton(
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun PreButton() {
+    CountDownButton(isPlaying = true, optionSelected = { /*TODO*/ }, title = "Start")
 }
