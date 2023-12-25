@@ -91,12 +91,12 @@ fun CountDownView(
             CountDownButton(
                 isPlaying = isPlaying,
                 title = "START",
-                optionSelected = { viewModel.startTimer() }
+                onClick = { viewModel.startTimer() }
             )
             CountDownButton(
                 isPlaying = isPlaying,
                 title = "STOP",
-                optionSelected = { viewModel.pauseTimer() }
+                onClick = { viewModel.pauseTimer() }
             )
         }
     }

@@ -26,7 +26,7 @@ import com.example.stopwatch.R
 fun CountDownButton(
     modifier: Modifier = Modifier,
     isPlaying: Boolean,
-    optionSelected: () -> Unit,
+    onClick: () -> Unit,
     title: String
 ) {
     Column(
@@ -37,7 +37,7 @@ fun CountDownButton(
     {
         Button(
             onClick = {
-                optionSelected()
+                onClick()
             },
             modifier =
             Modifier
@@ -65,5 +65,5 @@ fun CountDownButton(
 @Preview
 @Composable
 fun PreButton() {
-    CountDownButton(isPlaying = true, optionSelected = { /*TODO*/ }, title = "Start")
+    CountDownButton(isPlaying = true, onClick = { /*TODO*/ }, title = "Start")
 }
